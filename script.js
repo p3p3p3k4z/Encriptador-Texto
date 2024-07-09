@@ -19,3 +19,11 @@ function decryptText() {
         .replace(/ufat/g, "u");
     document.getElementById("output-text").value = decryptedText;
 }
+
+function copyText() {
+    let outputText = document.getElementById("output-text");
+    outputText.select();
+    outputText.setSelectionRange(0, 99999); /* Para dispositivos móviles */
+    document.execCommand("copy");
+    alert("Texto copiado: " + outputText.value);
+}
